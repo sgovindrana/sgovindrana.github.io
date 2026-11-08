@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Govind Rana – Java Full Stack Developer</title>
+<meta name="description" content="Govind Rana, Java Full Stack Developer with 3+ years building Spring Boot microservices, Angular apps and AI RAG pipelines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #0F1620;
+    --surface: #17212D;
+    --line: #26323F;
+    --text: #E6EBF2;
+    --muted: #8D9AAB;
+    --amber: #F0A64B;
+    --sky: #8EC1EE;
+    --sans: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--sky); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+  img { max-width: 100%; }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 72px 0 56px; border-bottom: 1px solid var(--line); }
+  .hero-top { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .avatar {
+    width: 128px; height: 128px; border-radius: 50%;
+    background: var(--surface); border: 2px solid var(--line);
+    display: grid; place-items: center; overflow: hidden; flex-shrink: 0;
+    font-size: 40px; font-weight: 600; color: var(--amber);
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  h1 {
+    font-size: clamp(42px, 7vw, 68px);
+    line-height: 1.02; letter-spacing: -0.02em;
+    margin: 0 0 10px; font-weight: 700;
+  }
+  .role { font-size: 20px; color: var(--muted); margin: 0; }
+  .role strong { color: var(--text); font-weight: 500; }
+
+  .contact { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn {
+    display: inline-block; padding: 10px 18px; border-radius: 6px;
+    font-weight: 500; font-size: 15px; border: 1px solid var(--line);
+    color: var(--text); background: var(--surface);
+  }
+  .btn:hover { text-decoration: none; border-color: var(--muted); }
+  .btn.primary { background: var(--amber); color: #1A1206; border-color: var(--amber); }
+  .btn.primary:hover { filter: brightness(1.08); }
+
+  /* Startup log: the one memorable moment */
+  .log {
+    margin-top: 40px; background: #0A1018; border: 1px solid var(--line);
+    border-radius: 10px; padding: 18px 20px; font-family: var(--mono);
+    font-size: 13.5px; line-height: 1.75; overflow-x: auto; min-height: 168px;
+  }
+  .log-line { white-space: pre; opacity: 0; }
+  .log-line.on { opacity: 1; }
+  .t { color: #56657A; }
+  .lvl { color: #6FCF97; }
+  .cls { color: var(--sky); }
+  .hl { color: var(--amber); font-weight: 500; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 64px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 28px; letter-spacing: -0.01em; margin: 0 0 28px; font-weight: 600; }
+  .lead { font-size: 19px; max-width: 68ch; margin: 0; }
+  .lead + .lead { margin-top: 14px; color: var(--muted); font-size: 17px; }
+
+  /* Experience timeline (a real sequence, so a rail fits) */
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before {
+    content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--line);
+  }
+  .job { position: relative; padding-left: 36px; margin-bottom: 40px; }
+  .job:last-child { margin-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: 0; top: 7px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--ink); border: 2px solid var(--muted);
+  }
+  .job.current::before { border-color: var(--amber); background: var(--amber); }
+  .job.break::before { border-style: dashed; }
+  .job-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .job h3 { margin: 0; font-size: 20px; font-weight: 600; }
+  .when { color: var(--muted); font-size: 15px; }
+  .job-role { margin: 2px 0 10px; color: var(--muted); font-size: 15.5px; }
+  .job ul { margin: 0; padding-left: 20px; }
+  .job li { margin-bottom: 6px; max-width: 72ch; }
+  .job li::marker { color: var(--muted); }
+  .job.break .job-role { margin-bottom: 0; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: 180px 1fr; gap: 14px 24px; margin: 0; }
+  .skills dt { color: var(--muted); font-size: 15.5px; padding-top: 2px; }
+  .skills dd { margin: 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-size: 14.5px; padding: 3px 10px; border-radius: 4px;
+    background: var(--surface); border: 1px solid var(--line);
+  }
+
+  /* Projects */
+  .project { padding: 24px 0; border-top: 1px solid var(--line); }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: baseline; }
+  .project h3 { margin: 0 0 6px; font-size: 20px; font-weight: 600; }
+  .stack { color: var(--amber); font-size: 14.5px; margin: 0 0 10px; }
+  .project p { margin: 0; max-width: 72ch; }
+
+  /* Education + certificates */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  h3.small { font-size: 18px; margin: 0 0 12px; font-weight: 600; }
+  .plain { list-style: none; margin: 0; padding: 0; }
+  .plain li { margin-bottom: 12px; }
+  .sub { color: var(--muted); font-size: 15px; display: block; }
+
+  footer { padding: 56px 0 64px; }
+  footer p { color: var(--muted); margin: 0 0 20px; }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .hero { padding-top: 48px; }
+    .avatar { width: 96px; height: 96px; font-size: 30px; }
+    .skills { grid-template-columns: 1fr; gap: 6px; }
+    .skills dd { margin-bottom: 14px; }
+    .two-col { grid-template-columns: 1fr; gap: 32px; }
+    section { padding: 48px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .log-line { opacity: 1 !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="avatar" aria-hidden="true">
+        <!-- Upload your photo as photo.jpg in the repo; until then your initials show -->
+        <img src="photo.jpg" alt="" onerror="var p=this.parentNode; p.textContent='GR';">
+      </div>
+      <div>
+        <h1>Govind Rana</h1>
+        <p class="role"><strong>Java Full Stack Developer</strong> at CGI, Hyderabad</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <a class="btn primary" href="mailto:s.govindrana@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/sgovindrana" target="_blank" rel="noopener">GitHub</a>
+      <!-- Replace the link below with your LinkedIn URL -->
+      <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <!-- Put resume.pdf in the repo to make this work -->
+      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+    </div>
+
+    <div class="log" id="log" aria-label="Career summary in the style of an application startup log"></div>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p class="lead">I build backend services in Java and Spring Boot and the Angular front ends that sit on top of them. Over 3+ years I’ve worked on insurance, financial and security products, from REST APIs and microservices to cloud deployment on AWS.</p>
+      <p class="lead">At CGI I work on a vulnerability remediation product and its AI side, where I own the data ingestion part of a RAG pipeline in Python. Based in Hyderabad, open to roles in Bangalore and Hyderabad.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li class="job current">
+          <div class="job-head"><h3>CGI</h3><span class="when">Nov 2025 – Present</span></div>
+          <p class="job-role">Software Engineer, Java Full Stack Developer · Hyderabad</p>
+          <ul>
+            <li>Developed and enhanced the JEDI vulnerability remediation automation product using Java, Spring Boot and Angular.</li>
+            <li>Built REST APIs and automated remediation workflows, reducing manual effort to fix security vulnerabilities.</li>
+            <li>Worked with the AI team on a RAG pipeline for JEDI, owning the data ingestion module in Python.</li>
+            <li>Contributed to third-party payment gateway integration using REST APIs, covering payment initiation and transaction tracking.</li>
+          </ul>
+        </li>
+        <li class="job">
+          <div class="job-head"><h3>Cresen Solutions</h3><span class="when">Oct 2024 – Jan 2025</span></div>
+          <p class="job-role">Software Engineer, Java Full Stack Developer · Remote, India/USA</p>
+          <ul>
+            <li>Developed SpendMate, a financial tracking product, using Java 17, Spring Boot, Angular 16 and PostgreSQL.</li>
+            <li>Led 2 UAT cycles with the US team and conducted peer code reviews for two feature enhancements.</li>
+          </ul>
+        </li>
+        <li class="job break">
+          <div class="job-head"><h3>Career break</h3><span class="when">Aug 2021 – Oct 2024</span></div>
+          <p class="job-role">UPSC preparation</p>
+        </li>
+        <li class="job">
+          <div class="job-head"><h3>Cognizant Technology Solutions</h3><span class="when">Jul 2019 – Aug 2021</span></div>
+          <p class="job-role">Jr. Software Engineer, Java Full Stack Developer · Bengaluru</p>
+          <ul>
+            <li>Worked as Java Full Stack Developer on American International Group’s (AIG) RetireUp project in the insurance domain.</li>
+            <li>Developed REST APIs and microservices using Java 8, Spring Boot, Angular and Hibernate, deployed on AWS.</li>
+            <li>Removed vulnerabilities in legacy JSP applications and microservices using Veracode, ThreadFix and WhiteHat (DevSecOps).</li>
+            <li>Improved Document Management System response time using multi-threading.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt>
+        <dd class="tags"><span class="tag">Java 8 / 17 / 21</span><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">HTML5 / CSS3</span></dd>
+        <dt>Backend</dt>
+        <dd class="tags"><span class="tag">Spring Boot</span><span class="tag">Spring MVC</span><span class="tag">REST APIs</span><span class="tag">Microservices</span><span class="tag">JPA / Hibernate</span><span class="tag">JUnit 5</span></dd>
+        <dt>Frontend</dt>
+        <dd class="tags"><span class="tag">Angular 16</span></dd>
+        <dt>Cloud &amp; DevOps</dt>
+        <dd class="tags"><span class="tag">AWS (EC2, EKS, S3, RDS, Lambda, IAM)</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span><span class="tag">ArgoCD</span><span class="tag">SonarQube</span></dd>
+        <dt>Databases</dt>
+        <dd class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span></dd>
+        <dt>AI</dt>
+        <dd class="tags"><span class="tag">RAG pipelines</span><span class="tag">Data ingestion</span><span class="tag">Spring AI</span></dd>
+        <dt>Practices</dt>
+        <dd class="tags"><span class="tag">OOP</span><span class="tag">Design patterns</span><span class="tag">Agile / Scrum</span><span class="tag">Git</span><span class="tag">JIRA</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <article class="project">
+        <div class="project-head">
+          <h3>Food Delivery Application</h3>
+          <a href="https://github.com/sgovindrana" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <p class="stack">Java 17, Spring Boot, Angular 16, Microservices, MySQL, MongoDB, Docker, Kubernetes, Jenkins, ArgoCD, AWS</p>
+        <p>A cloud-native food delivery system built from scratch as microservices, with CI/CD through Jenkins and ArgoCD, MySQL on AWS RDS and MongoDB Atlas for storage, deployed on AWS EC2. JUnit tests run in the pipeline with SonarQube quality gates.</p>
+      </article>
+      <article class="project">
+        <div class="project-head">
+          <h3>Medicare Management System</h3>
+          <a href="https://github.com/sgovindrana" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <p class="stack">Java, Spring Boot, Angular, REST APIs, JPA/Hibernate, TypeScript, MySQL</p>
+        <p>A microservices application with separate modules for admin, doctor and patient management.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap two-col">
+      <div>
+        <h3 class="small">Education</h3>
+        <ul class="plain">
+          <li>B.Tech in Computer Science, specialization in Cloud Computing
+            <span class="sub">Galgotias University, Noida · 2015 – 2019 · 7.84 CGPA</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="small">Certificates</h3>
+        <ul class="plain">
+          <li>Spring Boot Microservices, Angular, Kubernetes, CI/CD and AWS
+            <span class="sub">2025</span></li>
+          <li>Full Stack Engineer Program
+            <span class="sub">IIHT, Cognizant Academy, Bengaluru · 2020</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>Open to Java Full Stack roles in Bangalore and Hyderabad.</p>
+    <div class="contact" style="margin-top:0">
+      <a class="btn primary" href="mailto:s.govindrana@gmail.com">s.govindrana@gmail.com</a>
+      <a class="btn" href="https://github.com/sgovindrana" target="_blank" rel="noopener">github.com/sgovindrana</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Experience in months: Cognizant (Jul 2019–Aug 2021) + Cresen (Oct 2024–Jan 2025) + CGI (Nov 2025–now)
+  function monthsBetween(y1, m1, y2, m2) { return (y2 - y1) * 12 + (m2 - m1); }
+  const now = new Date();
+  const months = monthsBetween(2019, 6, 2021, 7) + monthsBetween(2024, 9, 2025, 0)
+               + Math.max(0, monthsBetween(2025, 10, now.getFullYear(), now.getMonth()));
+  const years = (months / 12).toFixed(1);
+
+  const pad = n => String(n).padStart(2, "0");
+  const stamp = s => {
+    const d = new Date(now.getTime() + s * 1000);
+    return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  };
+
+  const lines = [
+    `<span class="t">${stamp(0)}</span>  <span class="lvl">INFO</span>  <span class="cls">GovindRanaApplication</span>  Starting using Java 17 and Spring Boot`,
+    `<span class="t">${stamp(1)}</span>  <span class="lvl">INFO</span>  <span class="cls">ExperienceLoader</span>       Loaded Cognizant (AIG RetireUp), Cresen (SpendMate), CGI (JEDI)`,
+    `<span class="t">${stamp(1)}</span>  <span class="lvl">INFO</span>  <span class="cls">StackConfig</span>            Spring Boot, Angular, Microservices, AWS, Docker, Kubernetes`,
+    `<span class="t">${stamp(2)}</span>  <span class="lvl">INFO</span>  <span class="cls">AiModule</span>               RAG pipeline: data ingestion module online (Python)`,
+    `<span class="t">${stamp(3)}</span>  <span class="lvl">INFO</span>  <span class="cls">GovindRanaApplication</span>  <span class="hl">Started in ${years} years of experience. Open to new roles.</span>`
+  ];
+
+  const log = document.getElementById("log");
+  lines.forEach(html => {
+    const div = document.createElement("div");
+    div.className = "log-line";
+    div.innerHTML = html;
+    log.appendChild(div);
+  });
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const rows = log.querySelectorAll(".log-line");
+  if (reduce) {
+    rows.forEach(r => r.classList.add("on"));
+  } else {
+    rows.forEach((r, i) => setTimeout(() => r.classList.add("on"), 350 + i * 450));
+  }
+</script>
+</body>
+</html>
